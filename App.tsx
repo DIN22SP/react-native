@@ -1,22 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image} from 'react-native';
+import { View} from 'react-native';
 import Transaction from './components/Transaction';
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View className='flex-1 flex-col bg-blue-500 items-center justify-center'>
       <Transaction />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: "#466c6b",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+// https://github.com/RabinThapa1998/expo-typescript-native-wind-starter/blob/main/App.tsx

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, Image, View, Pressable, Alert } from "react-native";
 import React from "react";
+import { Image, Text, View, Pressable, Alert } from "react-native";
 
 export default function Transaction() {
   const handleButtonPress = () => {
@@ -7,116 +7,33 @@ export default function Transaction() {
   };
 
   return (
-    <View style={styles.main}>
-      <Image source={require("../image/icon.png")} style={styles.icon} />
-      <Text style={styles.sentText}>
-        Sent successfully to <Text style={styles.boldText}>Lela Crawford</Text>
+    <View className="p-20 pt-40 bg-white w-80% max-h-70% flex-1 items-center rounded-20">
+      <Image source={require("../image/icon.png")} className="mb-20 w-100 h-100" />
+      <Text className="text-green-700 text-18">
+        Sent successfully to <Text className="font-bold">Lela Crawford</Text>
       </Text>
-      <Text style={styles.amount}>$100.00</Text>
+      <Text className="pt-20 pb-20 text-green-700 font-bold text-30">$100.00</Text>
 
-      <View style={styles.userWrapper}>
-        <Image source={require("../image/avater.png")} style={styles.avater} />
-        <View style={styles.userInfo}>
-          <Text style={styles.name}>John Crawfood</Text>
-          <Text style={styles.email}>John123@gmail.com</Text>
+      <View className="flex-row items-center justify-center gap-15">
+        <Image source={require("../image/avater.png")} className="w-60 h-60" />
+        <View className="flex-col items-start justify-center">
+          <Text className="font-bold text-20">John Crawfood</Text>
+          <Text className="text-gray-500 text-16">John123@gmail.com</Text>
         </View>
       </View>
 
-      <View style={styles.grayLine} />
+      <View className="h-2 w-90% mt-40 mb-20 bg-gray-300" />
 
-      <Text style={styles.transactionInfo}>
-        Transaction done on <Text style={styles.boldText}>12 January 2023</Text>. Your reference number is
-        1234567890.
+      <Text className="text-green-700 text-16 p-20 text-center">
+        Transaction done on <Text className="font-bold">12 January 2023</Text>. Your reference number is 1234567890.
       </Text>
 
-      <Pressable style={styles.continueButton} onPress={handleButtonPress}>
-        <Text style={styles.btnText}>Continue</Text>
+      <Pressable
+        className="w-90% rounded-30 mt-30 bg-gradient-to-br from-orange-500 to-green-700"
+        onPress={handleButtonPress}
+      >
+        <Text className="text-white text-22 font-bold p-20 text-center">Continue</Text>
       </Pressable>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  main: {
-    padding: 20,
-    paddingTop: 40,
-    backgroundColor: "#fff",
-    width: "80%",
-    maxHeight: "70%",
-    flex: 1,
-    alignItems: "center",
-    borderRadius: 20,
-  },
-  icon: {
-    marginBottom: 20,
-    width: 100,
-    height: 100,
-  },
-  avater: {
-    width: 60,
-    height: 60,
-  },
-  sentText: {
-    color: "#466c6b",
-    fontSize: 18,
-  },
-  boldText: {
-    fontWeight: "bold",
-  },
-  amount: {
-    paddingTop: 20,
-    paddingBottom: 20,
-    color: "#466c6b",
-    fontWeight: "bold",
-    fontSize: 30,
-  },
-  userWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 15,
-  },
-  userInfo: {
-    flexDirection: "column",
-    alignItems: "flex-start",
-    justifyContent: "center",
-  },
-  name: {
-    fontWeight: "bold",
-    fontSize: 20,
-  },
-  email: {
-    color: "gray",
-    fontSize: 16,
-  },
-  grayLine: {
-    height: 2,
-    width: "90%",
-    marginTop: 40,
-    marginBottom: 20,
-    backgroundColor: "#e9e9e9",
-  },
-  transactionInfo: {
-    color: "#466c6b",
-    fontSize: 16,
-    padding: 20,
-    textAlign: "center",
-  },
-  continueButton: {
-    backgroundColor: "#466c6b",
-    width: "90%",
-    borderRadius: 30,
-    marginTop: 30,
-    shadowColor: '#171717',
-    shadowOffset: {width: -2, height: 4},
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-  },
-  btnText: {
-    color: "#fff",
-    fontSize: 22,
-    fontWeight: "bold",
-    padding: 20,
-    textAlign: "center",
-  },
-});
